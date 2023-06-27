@@ -12,4 +12,4 @@
 - [x] return json for /mode
 - [x] handle NaN errors. For instance, /mean?nums=foo,2,3 should respond with a 400 Bad Request status code and a response that saying something like: foo is not a number.
 - [x] handle empty input: /mean without passing any nums should respond with a 400 Bad Request status code saying something like nums are required.
-- [ ] make sure you have unit tests for mean, median and mode.
+- [x] make sure you have unit tests for mean, median and mode.
