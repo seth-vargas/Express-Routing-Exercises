@@ -29,7 +29,7 @@ function mode(nums) {
     for (const value of nums) {
         counts[value] = (counts[value] || 0) + 1;
     }
-    return Object.keys(counts).find((key) => counts[key] === Math.max(...Object.values(counts)));
+    return parseInt(Object.keys(counts).find((key) => counts[key] === Math.max(...Object.values(counts))));
 }
 
 /* converts stringy query to an array of ints */
