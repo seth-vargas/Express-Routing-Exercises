@@ -3,7 +3,7 @@
 - [ ] setup npm env
 - [ ] install express
 - [ ] require express
-- [ ] instanciate app
+- [ ] instantiate app
 - [ ] set up get request for /mean (average)
 - [ ] set up get request for /median (midpoint)
 - [ ] set up get request for /mode (most frequent)
