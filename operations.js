@@ -1,5 +1,7 @@
 /* File that exports each statistical function */
 
+const ExpressError = require("./expressError")
+
 /* returns the average of nums */
 
 function mean(nums) {
@@ -36,10 +38,14 @@ function stringsToInts(query) {
     const nums = []
 
     for (let str of query) {
+        const newNum = parseInt(str)
+        if (!newNum) {
+            throw new ExpressError(`${str} is not a number`, 400)
+        }
         nums.push(parseInt(str))
     }
 
     return nums
 }
 
-module.exports = {mean, median, mode, stringsToInts}
+module.exports = { mean, median, mode, stringsToInts }
