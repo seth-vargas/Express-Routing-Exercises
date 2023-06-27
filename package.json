@@ -1,0 +1,15 @@
+{
+  "name": "express-routing-exercises",
+  "version": "1.0.0",
+  "description": "- [ ] set up get request for /mean - [ ] set up get request for /median - [ ] set up get request for /mode - [ ] return json for /mean - [ ] return json for /median - [ ] return json for /mode - [ ] handle NaN errors. For instance, /mean?nums=foo,2,3 should respond with a 400 Bad Request status code and a response that saying something like: foo is not a number. - [ ] handle empty input: /mean without passing any nums should respond with a 400 Bad Request status code saying something like nums are required. - [ ] make sure you have unit tests for mean, median and mode.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
