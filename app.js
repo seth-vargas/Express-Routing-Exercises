@@ -1,21 +1,34 @@
 const express = require("express")
+const { mean, median, mode, stringsToInts } = require("./operations")
 
 const app = express()
 
-// TODO: set up get request for /mean
+app.get("/mean", (req, res) => {
+    const query = req.query.nums.split(",")
+    const nums = stringsToInts(query)
+    res.json({ response: { method: "mean", value: mean(nums) } })
+})
 
-// TODO: set up get request for /median
+app.get("/median", (req, res) => {
+    const query = req.query.nums.split(",")
+    const nums = stringsToInts(query)
+    res.json({ response: { method: "median", value: median(nums) } })
+})
 
-// TODO: set up get request for /mode
+app.get("/mode", (req, res) => {
+    const query = req.query.nums.split(",")
+    const nums = stringsToInts(query)
+    res.json({ response: { method: "mode", value: mode(nums) } })
+})
 
-// TODO: return json for /mean
+// TODO: handle NaN errors. For instance, /mean?nums=foo,2,3 should respond with a 400 Bad Request 
+// status code and a response that saying something like: foo is not a number.
 
-// TODO: return json for /median
-
-// TODO: return json for /mode
-
-// TODO: handle NaN errors. For instance, /mean?nums=foo,2,3 should respond with a 400 Bad Request status code and a response that saying something like: foo is not a number.
-
-// TODO: handle empty input: /mean without passing any nums should respond with a 400 Bad Request status code saying something like nums are required.
+// TODO: handle empty input: /mean without passing any nums should respond with a 400 Bad Request 
+// status code saying something like nums are required.
 
 // TODO: make sure you have unit tests for mean, median and mode.
+
+app.listen(3000, () => {
+    console.log("Server is live at http://localhost:3000")
+})
